@@ -6,9 +6,9 @@ let showResult = queryResponse => {
 
     // We gaan eerst een paar onderdelen opvullen
     // Zorg dat de SOL wordt weergegeven
-    document.querySelector(".js-sol1").innerHTML = `SOL: ${queryResponse.sol_keys[0]}<br> Temp: ${queryResponse[681].AT.av}`;
-    document.querySelector(".js-sol2").innerHTML = `SOL: ${queryResponse.sol_keys[1]}<br> Temp: ${queryResponse[684].AT.av}`;
-    document.querySelector(".js-sol3").innerHTML = `SOL: ${queryResponse.sol_keys[2]}<br> Temp: ${queryResponse[685].AT.av}`;
+    document.querySelector(".js-sol1").innerHTML = `SOL: ${queryResponse.sol_keys[0]}<br> Temp: ${queryResponse[684].AT.av}`;
+    document.querySelector(".js-sol2").innerHTML = `SOL: ${queryResponse.sol_keys[1]}<br> Temp: ${queryResponse[685].AT.av}`;
+    document.querySelector(".js-sol3").innerHTML = `SOL: ${queryResponse.sol_keys[2]}<br> Temp: ${queryResponse[688].AT.av}`;
 
 };
 
@@ -31,3 +31,22 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM Loaded")
     getApi();
 })
+
+
+
+
+// MICRO INTERACTION
+// $('.arrow').on('click touch', function(e) {
+
+//     e.preventDefault();
+
+//     let arrow = $(this);
+
+//     if(!arrow.hasClass('animate')) {
+//         arrow.addClass('animate');
+//         setTimeout(() => {
+//             arrow.removeClass('animate');
+//         }, 1600);
+//     }
+
+// });

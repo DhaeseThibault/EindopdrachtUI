@@ -8,23 +8,92 @@
     <title>Meather</title>
 </head>
 <body>
-    <main class="c-app">
-        <h1>This is the weather on Mars</h1>
-        <div class="grid-container grid-container--fit">
-            <div class="grid-element js-sol1">
-                SOL:
-                Temp:  
+    <div class="grid">
+        <div class="grid-header">
+            <header class="o-row">
+                <div class="o-container">
+                    <div class="c-header">
+                        <div class="c-header__logo">
+                            <h2 class="c-logo">
+                                <svg class="c-logo__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.75 16.03">
+                                    <defs>
+                                        <style>.cls-1{fill:#fff200;}.cls-2,.cls-3{fill:#fff;}.cls-3{font-size:12px;font-family:MyriadPro-Regular, Myriad Pro;}.cls-4{letter-spacing:0.01em;}.cls-5{letter-spacing:0em;}</style>
+                                    </defs>
+                                    <g id="Layer_2" data-name="Layer 2">
+                                        <g id="Layer_1-2" data-name="Layer 1">
+                                            <g id="Layer_2-2" data-name="Layer 2">
+                                                <g id="Layer_1-2-2" data-name="Layer 1-2">
+                                                    <circle class="cls-1" cx="5.68" cy="4.93" r="4.93"/>
+                                                    <rect class="cls-2" y="9.11" width="21.23" height="4.53" rx="2.26"/>
+                                                    <circle class="cls-2" cx="6.53" cy="9.3" r="4.37"/>
+                                                    <circle class="cls-2" cx="14.69" cy="8.92" r="4.37"/>
+                                                    <circle class="cls-2" cx="10.61" cy="7.33" r="4.37"/>
+                                                </g>
+                                            </g>
+                                            <text class="cls-3" transform="translate(22.72 13.03)">
+                                                <tspan class="cls-4">M</tspan>
+                                                <tspan x="10.62" y="0">e</tspan>
+                                                <tspan class="cls-5" x="15.73" y="0">a</tspan>
+                                                <tspan x="21.47" y="0">ther</tspan>
+                                            </text>
+                                        </g>
+                                    </g>
+                                </svg>  
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="grid-main">
+            <div class="grid-textRecentWeather">
+                <div class="o-container">
+                    <div class="o-layout o-layout--gutter">
+                        <h2 class="c-lead--lg u-color-primary-base">
+                            Latest weather measured on Mars:
+                        </h2>
+                    </div>
+                </div>
             </div>
-            <div class="grid-element js-sol2">
-                SOL: 
-                Temp:
-            </div>
-            <div class="grid-element js-sol3">
-                SOL:
-                Temp:
+            <div class="grid-recentWeather">
+                <div class="o-container">
+                    <div class="c-sol u-color-primary-base">
+                        <div class="o-layout o-layout--gutter">
+                            <div class="u-max-width-sm">
+                                <h1 class="c-lead-xl ">
+                                    SOL 686
+                                </h1>
+                            </div>                
+                        </div>
+                        <div class="">
+                            <p>
+                                2 november 2020
+                            </p>
+                            <hr class="LineUnderDay">
+                        </div>
+                        <div class="c-information">
+                            <div class="o-layout o-layout--align-center">
+                                <div class="o-layout--gutter-lg1">
+                                    <div class="o-layout__item u-1-of-2-bp3">
+                                        <h3>
+                                            Season
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="o-layout--gutter-lg2">
+                                    <div class="o-layout__item u-1-of-2-bp3">
+                                        <h3>
+                                            Temp
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
+    </div>
     
 </body>
 </html>

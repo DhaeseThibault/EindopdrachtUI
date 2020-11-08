@@ -1,22 +1,172 @@
-.grid-container {
-    display: grid;
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 400;           
+    src: url("fonts/Inter-Regular.woff2") format("woff2");
 }
 
-
-.grid-container--fit {
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 600;
+    src: url("fonts/Inter-medium.woff2") format("woff2");
 }
 
-.grid-element {
-    background-color: deepPink;
-    padding: 20px;
-    color: #fff;
-    border: 1px solid #fff;
+@font-face {
+    font-family: "Inter Web";
+    font-weight: 700;
+    src: url("fonts/Inter-Bold.woff2") format("woff2");
 }
-  
-  
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 18px;
+    font-family: "Verdana";
+    background: #82BFEB;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
 body {
-    padding: 2em;
+  margin: 0;
+}
+
+h1 {
+  font-size: 36.5px;
+  line-height: 48px;
+  margin: 0;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 31px;
+  margin: 0 0 32px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 23px;
+  margin: 0 0 8px; 
+}
+
+p {
+  font-size: 17px;
+  line-height: 22px;
+  margin: 0 16px 0 16px;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+hr {
+  margin: 8px 54px 16px 54px;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    position: relative;
+    /* padding: 24px 24px 0; */
+    display: flow-root; /* New solution! Fixes margin collapsing */
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20.83em; /* 79.5 * 16px = 1272 */
+    width: 100%;
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+  display: flex;
+}
+
+.o-layout__item {
+  flex-basis: 100%;
+}
+
+/* gutter modifiers, these 9affect o-layout__item too */
+
+.o-layout--gutter-lg1 {
+  margin: 0 52px 0 61px;
+}
+
+.o-layout--gutter-lg2 {
+  margin: 0 61px 0 52px;
+}
+
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-center {
+  align-items: center;
+}
+
+
+
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+  margin-bottom: 50px;
+}
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+  margin: 0 16px;
 }
 
 /*------------------------------------*\
@@ -24,14 +174,406 @@ body {
 \*------------------------------------*/
 
 /*
-    Component: App
+    Component: Logo
     ---
-    Main app wrapper
+    Website main logo
 */
 
-.c-app {
-    max-width: 29em; /* 400 / font size (16) => 25em */
-    padding: 2em;
-    margin: 0 auto;
-    background: steelblue;
+.c-logo {
+    height: 56px;
+    align-items: center;
+    margin: 0 0 48px;
 }
+
+.c-logo__symbol {
+  height: 100%;
+}
+
+/*
+    Component: Lead
+    ---
+    Lead type treatments to style everything that differs from standard typography elements
+*/
+
+.c-lead--lg {
+    font-size: 26px;
+    line-height: 31px;
+    font-weight: 400;
+}
+
+.c-lead--xl {
+  font-size: 36.5px;
+  line-height: 48px;
+  font-weight: 700;
+}
+
+/* 
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* 
+    Component: SOL
+    ---
+    Info about what sol and date it is
+*/
+
+.c-sol {
+  /* display: flex; */
+  align-items: center;
+  border: 3px solid #ffffff;
+  border-radius: 15px;
+}
+
+/* 
+    Component: SOL
+    ---
+    Info about what sol and date it is
+*/
+
+.c-information {
+
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-sm {
+  max-width: 19.05em !important; /* // of343 px */
+}
+
+/*
+    Utility: Flex
+    ---
+    Utility classes to put specific flex properties onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-flex-basis-auto {
+  flex-basis: auto !important;
+}
+
+.u-flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.u-1-of-2 {
+  flex-basis: calc(100% / 2) !important;
+}
+
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-primary-base {
+    color: #ffffff;
+}
+
+
+
+.LineUnderDay {
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+
+
+
+.grid-container {
+  display: grid;
+  margin: 0 16px 0 16px ;
+  background: greenyellow;
+}
+
+.grid-container--fit {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+background-color: deepPink;
+padding: 20px;
+color: #fff;
+border: 1px solid #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .arrow {
+    --active: #fff;
+    --border: rgba(255, 255, 255, 0.12);
+    display: block;
+    position: relative;
+    width: 44px;
+    height: 44px;
+  }
+  .arrow.left {
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+  }
+  .arrow i {
+    display: block;
+    position: absolute;
+    margin: -10px 0 0 -10px;
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    top: 50%;
+  }
+  .arrow i:before, .arrow i:after {
+    content: "";
+    width: 10px;
+    height: 2px;
+    border-radius: 1px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: var(--active);
+    margin: -1px 0 0 -5px;
+    display: block;
+    -webkit-transform-origin: 9px 50%;
+            transform-origin: 9px 50%;
+  }
+  .arrow i:before {
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
+  }
+  .arrow i:after {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  .arrow:before, .arrow:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+  }
+  .arrow svg {
+    width: 44px;
+    height: 44px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    color: var(--active);
+    stroke-width: 2px;
+    stroke-dashoffset: 126;
+    stroke-dasharray: 126 126 0;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .arrow.animate svg {
+    -webkit-animation: stroke 1s ease forwards 0.3s;
+            animation: stroke 1s ease forwards 0.3s;
+  }
+  .arrow.animate i {
+    -webkit-animation: arrow 1.6s ease forwards;
+            animation: arrow 1.6s ease forwards;
+  }
+  .arrow.animate i:before {
+    -webkit-animation: arrowUp 1.6s ease forwards;
+            animation: arrowUp 1.6s ease forwards;
+  }
+  .arrow.animate i:after {
+    -webkit-animation: arrowDown 1.6s ease forwards;
+            animation: arrowDown 1.6s ease forwards;
+  }
+  
+  @-webkit-keyframes stroke {
+    52% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+      stroke-dashoffset: 0;
+    }
+    52.1% {
+      -webkit-transform: rotate(-360deg);
+              transform: rotate(-360deg);
+      stroke-dashoffset: 0;
+    }
+    100% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+      stroke-dashoffset: 126;
+    }
+  }
+  
+  @keyframes stroke {
+    52% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+      stroke-dashoffset: 0;
+    }
+    52.1% {
+      -webkit-transform: rotate(-360deg);
+              transform: rotate(-360deg);
+      stroke-dashoffset: 0;
+    }
+    100% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+      stroke-dashoffset: 126;
+    }
+  }
+  @-webkit-keyframes arrow {
+    0%,
+      100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    23% {
+      -webkit-transform: translateX(17px);
+              transform: translateX(17px);
+      opacity: 1;
+    }
+    24%,
+      80% {
+      -webkit-transform: translateX(-22px);
+              transform: translateX(-22px);
+      opacity: 0;
+    }
+    81% {
+      opacity: 1;
+      -webkit-transform: translateX(-22px);
+              transform: translateX(-22px);
+    }
+  }
+  @keyframes arrow {
+    0%,
+      100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    23% {
+      -webkit-transform: translateX(17px);
+              transform: translateX(17px);
+      opacity: 1;
+    }
+    24%,
+      80% {
+      -webkit-transform: translateX(-22px);
+              transform: translateX(-22px);
+      opacity: 0;
+    }
+    81% {
+      opacity: 1;
+      -webkit-transform: translateX(-22px);
+              transform: translateX(-22px);
+    }
+  }
+  @-webkit-keyframes arrowUp {
+    0%,
+      100% {
+      -webkit-transform: rotate(-40deg) scaleX(1);
+              transform: rotate(-40deg) scaleX(1);
+    }
+    20%,
+      80% {
+      -webkit-transform: rotate(0deg) scaleX(0.1);
+              transform: rotate(0deg) scaleX(0.1);
+    }
+  }
+  @keyframes arrowUp {
+    0%,
+      100% {
+      -webkit-transform: rotate(-40deg) scaleX(1);
+              transform: rotate(-40deg) scaleX(1);
+    }
+    20%,
+      80% {
+      -webkit-transform: rotate(0deg) scaleX(0.1);
+              transform: rotate(0deg) scaleX(0.1);
+    }
+  }
+  @-webkit-keyframes arrowDown {
+    0%,
+      100% {
+      -webkit-transform: rotate(40deg) scaleX(1);
+              transform: rotate(40deg) scaleX(1);
+    }
+    20%,
+      80% {
+      -webkit-transform: rotate(0deg) scaleX(0.1);
+              transform: rotate(0deg) scaleX(0.1);
+    }
+  }
+  @keyframes arrowDown {
+    0%,
+      100% {
+      -webkit-transform: rotate(40deg) scaleX(1);
+              transform: rotate(40deg) scaleX(1);
+    }
+    20%,
+      80% {
+      -webkit-transform: rotate(0deg) scaleX(0.1);
+              transform: rotate(0deg) scaleX(0.1);
+    }
+  }
+  .demo {
+    display: grid;
+    grid-template-columns: repeat(2, 44px);
+    grid-gap: 32px;
+  }
+  
+  html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  * {
+    box-sizing: inherit;
+  }
+  *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
+    background: #275efe;
+  }
+  body .dribbble {
+    position: fixed;
+    display: block;
+    right: 24px;
+    bottom: 24px;
+  }
+  body .dribbble img {
+    display: block;
+    width: 76px;
+  } */
