@@ -54,12 +54,12 @@ body {
   margin: 0;
 }
 
-h1 {
+/* h1 {
   font-size: 36.5px;
   line-height: 48px;
   margin: 0;
   font-weight: bold;
-}
+} */
 
 h2 {
   font-size: 26px;
@@ -70,7 +70,7 @@ h2 {
 h3 {
   font-size: 18px;
   line-height: 23px;
-  margin: 0 0 8px; 
+  margin: 0 0 8px 0; 
 }
 
 p {
@@ -134,22 +134,38 @@ hr {
 }
 
 /* gutter modifiers, these 9affect o-layout__item too */
-
-.o-layout--gutter-lg1 {
-  margin: 0 52px 0 61px;
+.o-layout--gutter-sm {
+  margin: 0 -16px 8px -16px;
 }
 
-.o-layout--gutter-lg2 {
+.o-layout--gutter-lg {
+  margin: 0 0 32px 0;
+}
+
+.o-layout--gutter-xl1 {
+  margin: 0 52px 0 61px;  
+}
+
+.o-layout--gutter-xl2 {
   margin: 0 61px 0 52px;
 }
 
+.o-layout--gutter-remove {
+  margin: 0 -16px 0 -16px;
+}
 
-/* Vertical alignment modifiers */
+.o-layout--gutter-remove2 {
+  margin: -16px 0 -16px 0;
+}
+
 
 .o-layout--align-center {
   align-items: center;
 }
 
+.o-layout--whitespace-nowrap {
+  white-space: nowrap;
+}
 
 
 
@@ -163,11 +179,7 @@ hr {
   margin-bottom: 50px;
 }
 
-/* gutter modifiers, these affect o-layout__item too */
 
-.o-layout--gutter {
-  margin: 0 16px;
-}
 
 /*------------------------------------*\
 #COMPONENTS
@@ -195,6 +207,20 @@ hr {
     Lead type treatments to style everything that differs from standard typography elements
 */
 
+.c-lead--sm {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+}
+
+.c-lead--season {
+  display: flex;
+  vertical-align: top;
+}
+
 .c-lead--lg {
     font-size: 26px;
     line-height: 31px;
@@ -205,6 +231,8 @@ hr {
   font-size: 36.5px;
   line-height: 48px;
   font-weight: 700;
+  margin: 16px 101px 0 101px;
+  white-space: nowrap;
 }
 
 /* 
@@ -227,8 +255,6 @@ hr {
 */
 
 .c-sol {
-  /* display: flex; */
-  align-items: center;
   border: 3px solid #ffffff;
   border-radius: 15px;
 }
@@ -254,7 +280,7 @@ hr {
 */
 
 .u-max-width-sm {
-  max-width: 19.05em !important; /* // of343 px */
+  max-width: 19.05em !important;    /* of 343 px */
 }
 
 /*
