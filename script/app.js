@@ -3,17 +3,18 @@ const apiKey = "elQ8cNca9AWnuQLHJQTrKNJfku0KvV88CknTTazw"
 
 let showResult = queryResponse => {
     console.log({queryResponse});
+
     const latest_sol = queryResponse.sol_keys[6];
-    const getal = 123.52346;
-    console.log(getal.toFixed(1));
+  
 
 
     // We gaan eerst een paar onderdelen opvullen
     // Zorg dat de SOL wordt weergegeven
-    document.querySelector(".js-SOLnow").innerHTML += `${queryResponse.sol_keys[6]}`;
-    document.querySelector(".js-SOLnowGemTemp").innerHTML += `${(queryResponse[latest_sol].AT.av).toFixed(1)}°F`;
-    document.querySelector(".js-SOLnowMinTemp").innerHTML += `${(queryResponse[latest_sol].AT.mn).toFixed(1)}°F`;
-    document.querySelector(".js-SOLnowMaxTemp").innerHTML += `${(queryResponse[latest_sol].AT.mx).toFixed(1)}°F`;
+    document.querySelector(".js-SOLnow").innerHTML = `SOL ${queryResponse.sol_keys[6]}`;
+    document.querySelector(".js-SOLnowGemTemp").innerHTML = `Gem: ${(queryResponse[latest_sol].AT.av).toFixed(1)}°F`;
+    document.querySelector(".js-SOLnowMinTemp").innerHTML = `Min: ${(queryResponse[latest_sol].AT.mn).toFixed(1)}°F`;
+    document.querySelector(".js-SOLnowMaxTemp").innerHTML = `Max: ${(queryResponse[latest_sol].AT.mx).toFixed(1)}°F`;
+    document.querySelector(".js-SeasonNow").innerHTML = `${(queryResponse[latest_sol].Season).charAt(0).toUpperCase() + (queryResponse[latest_sol].Season).slice(1)}`
 
 };
 
