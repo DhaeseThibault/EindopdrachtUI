@@ -134,6 +134,10 @@ hr {
 }
 
 /* gutter modifiers, these 9affect o-layout__item too */
+.o-layout--gutter {
+  margin-top: 42px;
+}
+
 .o-layout--gutter-sm {
   margin: 0 -16px 8px -16px;
 }
@@ -217,8 +221,7 @@ hr {
 }
 
 .c-lead--season {
-  display: flex;
-  vertical-align: top;
+
 }
 
 .c-lead--lg {
@@ -254,7 +257,7 @@ hr {
     Info about what sol and date it is
 */
 
-.c-sol {
+.c-border {
   border: 3px solid #ffffff;
   border-radius: 15px;
 }
