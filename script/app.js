@@ -5,7 +5,7 @@ let showResult = queryResponse => {
 
     // dit vraagt de laatste sol op en steekt het in een variabele
     const amount_sols = queryResponse.sol_keys.length;
-    const place_sols = amount_sols - 3;
+    const place_sols = amount_sols - 1;
     const latest_sol = queryResponse.sol_keys[place_sols];
     
     const season = queryResponse[latest_sol].Season.charAt(0).toUpperCase() + (queryResponse[latest_sol].Season).slice(1);
@@ -29,11 +29,6 @@ let showResult = queryResponse => {
     document.querySelector(".js-SeasonNow").innerHTML = `${season}`
 
 };
-
-
-
-
-
 // 2 Aan de hand van de url gaan we de API ophalen
 const getApi = async () => {
     // Eerst bouwen we onze url op
@@ -52,90 +47,3 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM Loaded")
     getApi();
 })
-
-// const getChart = querySelector => {
-// var dateSol = queryResponse[latest_sol].First_UTC;
-// var full_date = dateSol.slice(0, 10);
-// var year = full_date.substring(0,4);
-// var month = full_date.substring(5, 7);
-// var day = full_date.substring(8,10);    
-// var def_day = day + "/" + month + "/" + year;
-
-window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer", {
-        animationEnabled: true,
-        // backgroundcolor: "blue",
-        title:{
-            text: "Overview Max/Min/Avg"
-        },	
-        axisY: {
-            title: "Temperatures",
-            titleFontColor: "#4F81BC",
-            lineColor: "#4F81BC",
-            labelFontColor: "#4F81BC",
-            tickColor: "#4F81BC"
-        },	
-        toolTip: {
-            shared: true
-        },
-        legend: {
-            cursor:"pointer",
-            itemclick: toggleDataSeries
-        },
-        data: [{
-            type: "column",
-            name: "Average Temperature",
-            legendText: "Average Temperature",
-            showInLegend: true, 
-            dataPoints:[
-                { label: "Saudi", y: 266.21 },
-                { label: "Venezuela", y: 302.25 },
-                { label: "Iran", y: 157.20 },
-                { label: "Iraq", y: 148.77 },
-                { label: "Kuwait", y: 101.50 },
-                { label: "UAE", y: 97.8 }
-            ]
-        },
-        {
-            type: "column",	
-            name: "Maximum Temperature",
-            legendText: "Maximum Temperature",
-            axisYType: "secondary",
-            showInLegend: true,
-            dataPoints:[
-                { label: `Saudi`, y: 10.46 },
-                { label: "Venezuela", y: 2.27 },
-                { label: "Iran", y: 3.99 },
-                { label: "Iraq", y: 4.45 },
-                { label: "Kuwait", y: 2.92 },
-                { label: "UAE", y: 3.1 }
-            ]
-        },
-        {
-            type: "column",	
-            name: "Minimum Temperature",
-            legendText: "Minimum Temperature",
-            axisYType: "third",
-            showInLegend: true,
-            dataPoints:[
-                { label: "Saudi", y: 10.46 },
-                { label: "Venezuela", y: 2.27 },
-                { label: "Iran", y: 3.99 },
-                { label: "Iraq", y: 4.45 },
-                { label: "Kuwait", y: 2.92 },
-                { label: "UAE", y: 3.1 }
-            ]
-        }]
-    });
-    chart.render();
-    
-    function toggleDataSeries(e) {
-        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-            e.dataSeries.visible = false;
-        }
-        else {
-            e.dataSeries.visible = true;
-        }
-        chart.render();
-    }
-}
