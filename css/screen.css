@@ -10,6 +10,8 @@
   /* background color */
   --global-color-neutral: #82BFEB;
 
+  --global-color-landingpage: #F38562;
+
   /* Whitespace */    
     /* 
         global font-size = 15px
@@ -42,7 +44,10 @@
 }
 
 .landingpage {
+  font-size: 16px;
+  font-family: "Segoe UI";
   background-image: url(/img/jpg/Mars2.jpg);
+  color: var(--global-color-neutral-white);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-backgroun-size: cover;
@@ -210,6 +215,60 @@ h3 {
   margin-bottom: 0;
 }
 
+/* 
+    Component: landingpage
+*/
+
+.c-card__title-landingpage {
+  font-size: 45px;
+  color: var(--global-color-neutral-white);
+  margin-top: 125px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 60px;  
+  width: 19.62em;
+}
+
+.c-card__description-landingpage {
+  font-size: 20px;
+  color: var(--global-color-neutral-white);
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 31.35em;
+}
+
+.c-input__email {
+  font-size: 20px;
+  height: 50px;
+  width: 226px;
+  border-radius: 25px;
+  padding-left: 24px;
+  margin-right: 32px;
+  border-color: var(--global-color-neutral-white);
+  border-style: solid;
+  background-color: transparent;
+  color: var(--global-color-neutral-white);
+  outline: none;
+}
+
+
+.c-input__register {
+  font-size: 20px;
+  height: 50px;
+  width: 250px;
+  border-radius: 25px;
+  text-align: center;
+  background-color: var(--global-color-landingpage);
+  border-color: var(--global-color-landingpage);
+  color: var(--global-color-neutral-white);
+  outline: none;
+  cursor: pointer;
+}
+
 /*
     Component: Border
     ---
@@ -222,9 +281,9 @@ h3 {
 }
 
 /*
-    Component: Dashboard
+    Component: Grid
     ---
-    Dashboard component with CSS grid
+    Grid
 */
 
 .c-grid {
@@ -252,9 +311,47 @@ h3 {
   justify-self: center;
 }
 
+/*
+    Component: Frame
+    ---
+    Frame on landingspage.html
+*/
+
+.c-frame {
+  width: 63.19em;
+  height: 36.19em;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* @media screen and (min-width: 1920px) {
+  .c-frame {
+
+
+  } */
+
+.c-form{
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: 32px;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+
+
 .LineUnderDate {
   border: 2px solid white;
   border-radius: 10px;
   width: 75%;
   margin-bottom: 16px;
+}
+
+
+.chart {
+  border: solid;
 }

@@ -1,5 +1,7 @@
 const apiKey = "elQ8cNca9AWnuQLHJQTrKNJfku0KvV88CknTTazw"
 
+
+
 let showResult = queryResponse => {
     console.log({queryResponse});
 
@@ -42,6 +44,10 @@ const getApi = async () => {
     // console.log(data)
     showResult(data);
 };
+
+
+const chart = document.getElementById("myChart");
+console.log(chart);
 
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM Loaded")

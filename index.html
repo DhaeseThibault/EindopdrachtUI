@@ -6,6 +6,8 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="Favicon.ico" />
     <link rel="stylesheet" href="css/screen.css"></head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="script/app.js"></script>
     <script src="script/chart.js"></script>
     <title>Meather</title>
@@ -23,7 +25,6 @@
                     <p class="c-card__description">
                         Latest weather measured on Mars:
                     </p>
-
                     <div class="c-border">
                         <h1 class="c-card__sol">
                             SOL
@@ -57,6 +58,41 @@
                             </div>
                         </div>
                     </div>
+                    <div class="c-card__header">
+                        <h2 class="c-card__title">Bezoekers per dag</h2>
+                        <span class="c-custom-select">
+                            <select class="c-input c-custom-select__input js-day-select" name="select1" id="select1">
+                                <option value="maandag">Maandag</option>
+                                <option value="dinsdag">Dinsdag</option>
+                                <option value="woensdag">Woensdag</option>
+                                <option value="donderdag">Donderdag</option>
+                                <option value="vrijdag">Vrijdag</option>
+                                <option value="zaterdag">Zaterdag</option>
+                                <option value="zondag">Zondag</option>
+                            </select>
+                            <svg class="c-custom-select__symbol"><use xlink:href="#c-icon_small-down"></use></svg>
+                        </span>
+                    </div>
+                    <div class="c-card__body">
+                        <canvas class="js-graph" width="3" height="1"></canvas>
+                        <!-- <div class="c-legends u-mb-md">
+                            <div class="c-legend">
+                                <div class="c-legend__symbol c-legend__symbol--line c-legend__symbol--bg-alpha"></div>
+                                Products sold
+                            </div>
+                            <div class="c-legend">
+                                <div class="c-legend__symbol c-legend__symbol--line c-legend__symbol--bg-neutral-xx-light"></div>
+                                Total views
+                            </div>
+                        </div> -->
+                        <aside class="c-load-container js-load-container">
+                            <!-- <p>Loading...</p> -->
+                            <!-- <svg class="c-loader js-loader" viewbox="0 0 50 50">
+                                <circle class="c-loader__circle"></circle>
+                            </svg> -->
+                        </aside>
+                    </div>
+
                 </div>
             </div>
         </div>
