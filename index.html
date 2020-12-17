@@ -72,30 +72,21 @@
                             <!-- <svg class="c-custom-select__symbol"><use xlink:href="#c-icon_small-down"></use></svg> -->
                         </span>
                     </div>
-                    <div class="c-card__body">
-                        <canvas class="c-card__chart js-graph" width="350px" height="300px"></canvas>
-                        <!-- <div class="c-legends u-mb-md">
-                            <div class="c-legend">
-                                <div class="c-legend__symbol c-legend__symbol--line c-legend__symbol--bg-alpha"></div>
-                                Products sold
-                            </div>
-                            <div class="c-legend">
-                                <div class="c-legend__symbol c-legend__symbol--line c-legend__symbol--bg-neutral-xx-light"></div>
-                                Total views
-                            </div>
-                        </div> -->
+                    <div id="hideThisShit" class="c-card__body">
+                        <canvas id="showThisShit" class="js-graph" width="350px" height="300px"></canvas>
+
                         <aside class="c-load-container js-load-container">
-                            <!-- <p>Loading...</p> -->
-                            <!-- <svg class="c-loader js-loader" viewbox="0 0 50 50">
-                                <circle class="c-loader__circle"></circle>
-                            </svg> -->
+
                         </aside>
                     </div>
+                    
+            
                     <div class="mid">
+                        <label class="show">Show chart</label>
                         <label class="rocker">
                             <input type="checkbox" checked>
-                            <span class="switch-left">On</span>
-                            <span class="switch-right">Off</span>
+                            <span class="switch-left" onclick="showNow()">On</span>
+                            <span class="switch-right" onclick="hideNow()" >Off</span>
                           </label>
                     </div>
                 </div>

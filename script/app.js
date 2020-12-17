@@ -173,20 +173,26 @@ const init = () => {
 	loaderContainer = document.querySelector('.js-load-container');
 	loader = document.querySelector('.js-loader');
 
-	getVisitorsByDay('maandag');
-
-
-	
+	getVisitorsByDay('maandag');	
 };
 
-	// Micro interactino
 
+
+// Micro interactino
+
+// option 1 => WORKING
+function hideNow() {
+	document.getElementById("hideThisShit").style.visibility = "hidden";
+}
+
+function showNow() {
+	document.getElementById("showThisShit").style.visibility = "visible";
+}
 
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM Loaded")
     getApi();
 	init();
-	
 });
 
 

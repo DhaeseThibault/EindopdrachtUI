@@ -9,8 +9,15 @@
 
   /* background color */
   --global-color-neutral: #82BFEB;
-
+  --global-color-switch-left: #0084d0;
+  --global-color-switch-right: #bd5757;
   --global-color-landingpage: #F38562;
+  --global-color-gray: #888;
+  --global-color-lighter-gray: #999;
+  --global-color-darker-gray: #333;
+  --global-color-justnot-white: #ddd;
+  --global-color-almost-white: #ccc;
+  --global-color-i-dont-have-inspiration: #eee;
 
   /* Whitespace */    
     /* 
@@ -20,7 +27,9 @@
         5px = 1rem/3
         This would equal to 0.3333333...rem but let the browser do the math
     */
+    --global-fontsize: 16px;
     --global-baseline: calc(1rem / 2); 
+    --global-whitespace-x: 1rem;
     --global-whitespace-md: calc(var(--global-baseline) * 3); /* = 24px */
     --global-whitespace-lg: calc(var(--global-baseline) * 4); /* = 32px */
 }
@@ -37,14 +46,14 @@
 */
 
 .mainpage {
-  font-size: 16px;
+  font-size: var(--global-fontsize);
   font-family: "Segoe UI";
   background: var(--global-color-neutral);
   color: var(--global-color-main-text);
 }
 
 .landingpage {
-  font-size: 16px;
+  font-size: var(--global-fontsize);
   font-family: "Segoe UI";
   background-image: url(../img/jpg/Mars2.jpg);
   color: var(--global-color-neutral-white);
@@ -75,7 +84,7 @@
   margin-right: auto;
   max-width: 23.43em; /* 78 * 15px = 1170 */
   width: 100%;
-  padding: 16px;
+  padding: var(--global-fontsize);
 }
 
 /*
@@ -163,7 +172,7 @@ h3 {
   color: var(--global-color-neutral-white);
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: var(--global-fontsize);
 }
 
 .c-card__sol {
@@ -171,12 +180,12 @@ h3 {
   color: var(--global-color-neutral-white);
   display: flex;
   justify-content: center;
-  margin-top: 16px;
+  margin-top: var(--global-fontsize);
   margin-bottom: 0;
 }
 
 .c-card__date {
-  font-size: 16px;
+  font-size: var(--global-fontsize);
   color: var(--global-color-neutral-white);
   display: flex;
   justify-content: center;
@@ -216,8 +225,11 @@ h3 {
 }
 
 .c-custom-select__input {
-  margin-bottom: 16px;
+  margin-bottom: var(--global-fontsize);
 }
+
+
+
 
 /* 
     Component: landingpage
@@ -281,8 +293,8 @@ h3 {
 
 .c-border {
   border: 3px solid #ffffff;
-  border-radius: 15px;
-  margin-bottom: 16px;
+  border-radius: var(--global-whitespace-x);
+  margin-bottom: var(--global-fontsize);
 }
 
 /*
@@ -295,10 +307,10 @@ h3 {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-gap: var(--global-whitespace-lg);
-  margin-bottom: 16px;
-  margin-top: 16px;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-bottom: var(--global-fontsize);
+  margin-top: var(--global-fontsize);
+  margin-left: var(--global-fontsize);
+  margin-right: var(--global-fontsize);
   max-width: 18.7em;
 }
 
@@ -355,7 +367,7 @@ h3 {
   border: 2px solid white;
   border-radius: 10px;
   width: 75%;
-  margin-bottom: 16px;
+  margin-bottom: var(--global-fontsize);
 }
 
 
@@ -363,14 +375,23 @@ h3 {
   border: solid;
 }
 
+
+
 /* MICRO INTERACTION */
 
 .mid {
-  display: flex;
+  /* display: inline-block; */
   align-items: center;
   justify-content: center;
-  padding-top:1em;
 }
+
+.show {
+  display: flex;
+  font-size: 26px;
+  color: var(--global-color-neutral-white);
+  font-weight: 700;
+}
+
 
 
 /* Switch starts here */
@@ -385,15 +406,15 @@ h3 {
   will change the size of the switch.
   See .rocker-small below as example.
   */
-  font-size: 2em;
+  font-size: var(--global-whitespace-x);
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  color: #888;
+  color: var(--global-color-gray);
   width: 7em;
   height: 4em;
   overflow: hidden;
-  border-bottom: 0.5em solid #eee;
+  border-bottom: 0.5em solid var(--global-color-i-dont-have-inspiration);
 }
 
 .rocker-small {
@@ -408,8 +429,8 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #999;
-  border: 0.5em solid #eee;
+  background-color: var(--global-color-lighter-gray);
+  border: 0.5em solid var(--global-color-i-dont-have-inspiration);
   border-bottom: 0;
 }
 
@@ -436,15 +457,15 @@ h3 {
   width: 2.75em;
   left: 0.85em;
   bottom: 0.4em;
-  background-color: #ddd;
+  background-color: var(--global-color-justnot-white);
   transform: rotate(15deg) skewX(15deg);
 }
 
 .switch-right {
   right: 0.5em;
   bottom: 0;
-  background-color: #bd5757;
-  color: #fff;
+  background-color: var(--global-color-switch-right);
+  color: var(--global-color-neutral-white);
 }
 
 .switch-left::before,
@@ -454,7 +475,7 @@ h3 {
   width: 0.4em;
   height: 2.45em;
   bottom: -0.45em;
-  background-color: #ccc;
+  background-color: var(--global-color-almost-white);
   transform: skewY(-65deg);
 }
 
@@ -469,8 +490,8 @@ h3 {
 }
 
 input:checked + .switch-left {
-  background-color: #0084d0;
-  color: #fff;
+  background-color: var(--global-color-switch-left);
+  color: var(--global-color-neutral-white);
   bottom: 0px;
   left: 0.5em;
   height: 2.5em;
@@ -484,8 +505,8 @@ input:checked + .switch-left::before {
 }
 
 input:checked + .switch-left + .switch-right {
-  background-color: #ddd;
-  color: #888;
+  background-color:var(--global-color-justnot-white);
+  color: var(--global-color-gray);
   bottom: 0.4em;
   right: 0.8em;
   height: 2.4em;
@@ -494,18 +515,18 @@ input:checked + .switch-left + .switch-right {
 }
 
 input:checked + .switch-left + .switch-right::before {
-  background-color: #ccc;
+  background-color: var(--global-color-almost-white);
 }
 
 /* Keyboard Users */
 input:focus + .switch-left {
-  color: #333;
+  color: var(--global-color-darker-gray);
 }
 
 input:checked:focus + .switch-left {
-  color: #fff;
+  color: var(--global-color-neutral-white);
 }
 
 input:focus + .switch-left + .switch-right {
-  color: #fff;
+  color: var(--global-color-neutral-white);
 }
