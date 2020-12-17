@@ -174,13 +174,20 @@ const init = () => {
 	loader = document.querySelector('.js-loader');
 
 	getVisitorsByDay('maandag');
+
+
+	
 };
+
+	// Micro interactino
+
 
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM Loaded")
     getApi();
-    init();
-})
+	init();
+	
+});
 
 
 
