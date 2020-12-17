@@ -215,6 +215,9 @@ h3 {
   margin-bottom: 0;
 }
 
+.c-card__chart {
+
+}
 
 /* 
     Component: landingpage
@@ -279,6 +282,7 @@ h3 {
 .c-border {
   border: 3px solid #ffffff;
   border-radius: 15px;
+  margin-bottom: 16px;
 }
 
 /*
